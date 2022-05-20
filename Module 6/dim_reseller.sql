@@ -51,3 +51,5 @@ SELECT
 from STAGE_RESELLER as r
 left join dim_location as l
   USING (ADDRESS, POSTALCODE)
+
+Select * From DIM_RESELLER
