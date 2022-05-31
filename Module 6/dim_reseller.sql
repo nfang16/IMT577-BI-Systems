@@ -44,7 +44,11 @@ SELECT
     --DIMRESELLERID
     l.DIMLOCATIONID,
     r.RESLLERID as SOURCERESELLERID, --Spelling error from staging table step
-    r.RESELLERNAME, 
+    CASE 
+        WHEN r.RESELLERNAME = 'Mississipi Distributors'
+        THEN 'Mississippi Distributors'
+        ELSE r.RESELLERNAME
+    END,
     r.CONTACT as CONTACTNAME,
     r.PHONENUMBER,
     r.EMAILADDRESS
